@@ -17,12 +17,15 @@ archive/chest_xray
 ## Test only
 `python inference.py`
 
+## Pretrained model
+[Download Link](https://drive.google.com/drive/folders/10xKR3VQxdE7HuiFqWc0ROIY9nFdRfdiR?usp=sharing)
+
 ## Model architechure
 resnext50
 
 ## Results
-Accuracy: 94.39%
-F1-score: 0.9556
+* Accuracy: 94.39%
+* F1-score: 0.9556
 
 <table>
   <thead>
@@ -42,6 +45,8 @@ F1-score: 0.9556
   </tbody>
 </table>
 
+* Test Confusion matrix:
+![](https://i.imgur.com/wC3DIG3.png)
 
 
 

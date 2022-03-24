@@ -19,7 +19,9 @@ warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 from torchsummary import summary
 from sklearn.metrics import accuracy_score,classification_report, f1_score,roc_auc_score
-
+from sklearn.metrics import confusion_matrix
+import seaborn as sn
+import pandas as pd
 
 def images_transforms(phase):
     if phase == 'training':
@@ -106,6 +108,18 @@ def evaluate(model, device, test_loader):
         print ("TN : " , TN)
         print ("FP : " , FP)
         print ("FN : " , FN)
+
+        # Plot confusion_matrix (True \ Pred)
+        confusion_matrix = [[TP, FN], 
+                            [FP, TN]]
+        df_cm = pd.DataFrame(confusion_matrix, index=["NORMAL", "PNEUMONIA"],
+                  columns=["NORMAL", "PNEUMONIA"])      
+        sn.heatmap(df_cm, annot=True)
+        plt.xlabel("Prediction")
+        plt.ylabel("Ground Truth")
+        plt.title('Confusion Matrix')            
+        plt.savefig('test_confusion_matrix.png')
+
 
         print ("num_correct :",correct ," / " , len(test_loader.dataset))
         Recall = TP/(TP+FN)

@@ -21,7 +21,6 @@ from torchsummary import summary
 from sklearn.metrics import accuracy_score,classification_report, f1_score,roc_auc_score
 
 # VISUALIZE
-# TODO: 完成data visulization
 import wandb
 wandb.init(project="NYCU_AIMI_LAB1", entity="eritup45")
 wandb.config = {
