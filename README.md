@@ -48,8 +48,8 @@ resnext50
 * Test Confusion matrix:
 ![](https://i.imgur.com/wC3DIG3.png)
 
-
-
+## Report
+https://hackmd.io/@Bmj6Z_QbTMy769jUvLGShA/AIMI_LAB1
 
 
 
